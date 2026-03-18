@@ -106,7 +106,101 @@ Git 把你的文件管理分为**四个区域**：
 
 ---
 
-## 4. 安装与初始配置
+## 4. .gitignore：告诉 Git 哪些文件不要管
+
+### 是什么？
+
+`.gitignore` 是一个放在项目根目录的文本文件，里面列出你不想让 Git 追踪的文件或目录。
+
+### 为什么需要？
+
+有些文件不应该提交到仓库：
+
+| 类型 | 例子 | 原因 |
+|------|------|------|
+| 依赖目录 | `node_modules/` | 体积巨大，可以用 `npm install` 重新生成 |
+| 系统文件 | `.DS_Store` | macOS 自动生成，对项目无意义 |
+| 敏感信息 | `.env` | 含密码、API Key，不能公开 |
+| 编译产物 | `dist/`、`*.pyc` | 可以重新生成，不用纳入版本控制 |
+| 日志文件 | `*.log` | 运行时产生，不需要共享 |
+
+### 常用匹配规则
+
+```gitignore
+# 这是注释
+
+# 忽略所有 .log 文件
+*.log
+
+# 忽略整个目录（结尾加 /）
+node_modules/
+dist/
+
+# 忽略根目录下的 .env（/ 开头表示只匹配根目录）
+/.env
+
+# 例外：即使前面忽略了 *.log，这个文件还是要追踪（! 开头）
+!important.log
+```
+
+### 常用模板
+
+根据项目类型，直接复制对应的内容到 `.gitignore`：
+
+**macOS 通用**
+```gitignore
+.DS_Store
+.AppleDouble
+.LSOverride
+```
+
+**Node.js 项目**
+```gitignore
+node_modules/
+dist/
+.env
+.env.local
+npm-debug.log*
+```
+
+**Python 项目**
+```gitignore
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+dist/
+```
+
+> 💡 **快速获取模板**：访问 [gitignore.io](https://www.toptal.com/developers/gitignore) 输入你的操作系统和语言，自动生成完整模板。
+
+### 重要注意事项
+
+**已被 Git 追踪的文件不会自动被忽略。**
+
+如果你先提交了某个文件，之后才加入 `.gitignore`，Git 仍然会继续追踪它。需要先把它从 Git 的记录里删除：
+
+```bash
+# 从 Git 追踪中移除（文件本身不删除，只是告诉 Git "别管它了"）
+git rm --cached 文件名
+
+# 如果是整个目录
+git rm --cached -r 目录名/
+
+# 然后提交这个变更
+git commit -m "chore: stop tracking .env file"
+```
+
+之后 `.gitignore` 里的规则就会对该文件生效了。
+
+### 存放位置
+
+`.gitignore` 通常放在项目根目录，可以提交到 Git 仓库，让整个团队共享同一套忽略规则。
+
+---
+
+## 5. 安装与初始配置
 
 ### 安装 Git（macOS）
 
@@ -178,7 +272,7 @@ ssh -T git@github.com
 
 ---
 
-## 5. 公司协作流程
+## 6. 公司协作流程
 
 这是你日常最常用的工作流程。假设公司有一个仓库，你需要在上面修改一些东西。
 
@@ -372,7 +466,7 @@ git rebase master
 
 ---
 
-## 6. 常用命令速查表
+## 7. 常用命令速查表
 
 | 命令 | 作用 |
 |------|------|
@@ -388,7 +482,7 @@ git rebase master
 
 ---
 
-## 7. Stash：临时搁置改动
+## 8. Stash：临时搁置改动
 
 **使用场景**：你正在改东西，改了一半突然要切到另一个分支处理紧急任务，但现在的改动还没到能提交的程度。
 
@@ -424,7 +518,7 @@ git stash clear
 
 ---
 
-## 8. 回滚：撤销错误改动
+## 9. 回滚：撤销错误改动
 
 回滚分三种情况，对应不同的命令：
 
