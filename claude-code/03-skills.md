@@ -154,3 +154,7 @@ Skill 采用"描述先行，内容按需"的策略：
 - **触发时**：把 `SKILL.md` 全文 + 脚本/模板内容注入当前主对话
 
 结论：**装多少个 Skill 都不影响启动速度**，SKILL.md 写很长也没关系，不触发就不加载。
+
+---
+
+> **官方文档**：[Skills 规范](https://code.claude.com/docs/en/skills)

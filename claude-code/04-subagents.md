@@ -205,3 +205,7 @@ skills:
 
 **口诀：**
 > 需要边做边聊 → **Skill**；丢出去跑完汇报 → **Subagent**
+
+---
+
+> **官方文档**：[Subagents 规范](https://code.claude.com/docs/en/sub-agents)

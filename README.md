@@ -24,6 +24,11 @@
 | [03 · Skills 机制](./claude-code/03-skills.md) | Skill 是什么、触发方式、目录结构、自定义 Skill 完整示例 |
 | [04 · Subagents 机制](./claude-code/04-subagents.md) | Subagent 是什么、触发方式、内置类型、自定义、与 Skill 的对比和选择指引 |
 | [05 · 构建本地 Agent](./claude-code/05-agent-patterns.md) | 本地 Agent 目录结构、运作全景图、串行编排、并行编排、实用技巧 |
+| [06 · 常见问题](./claude-code/06-faq.md) | 产品对比、基础使用、CLAUDE.md、Skills、Subagents、安全与权限 |
+
+---
+
+官方文档：[Claude Code Docs](https://code.claude.com/docs/en/)
 
 ---
 
