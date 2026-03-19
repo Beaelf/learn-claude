@@ -4,6 +4,25 @@
 
 ---
 
+## Claude Code 能做什么？
+
+Claude Code 是一个运行在终端里的 AI 编程工具，但它的使用者不只是程序员。
+
+基于 Claude Code + Local Agent 的玩法，**非技术同学也可以用纯中文的方式"开发"一个 agent**，来处理各种任务：数据分析、PRD 编写、金融分析、撰写小红书文章……只要你能描述清楚任务流程，Claude Code 就能把它变成一个可重复执行的自动化工作流。
+
+**什么类型的任务适合用 Claude Code？**
+
+- 任务需要调用多个工具（搜索 + 分析 + 写报告）
+- 任务有明确的执行流程（第一步做什么、第二步做什么）
+- 任务需要多人协作调整和积累（共享 CLAUDE.md、Skill、Subagent）
+- 任务会反复执行，值得一次配置、长期复用
+
+单次、简单的任务（比如问一个问题、做一次快速 research）直接用 Claude Desktop 就够，不需要 Claude Code。
+
+> 想了解 Claude Code 与 Claude Desktop、Claude Cowork 等产品的区别，见 [常见问题 → 产品对比](./06-faq.md#产品对比)。
+
+---
+
 ## 1. 安装 Claude Code
 
 ### 前置要求：安装 Node.js

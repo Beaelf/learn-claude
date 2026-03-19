@@ -4,6 +4,42 @@
 
 ---
 
+## 产品对比
+
+### Claude Code 和 Claude Cowork 有什么区别？
+
+本质上是同一个东西。Claude 发现很多非技术人士也在用 Claude Code 处理非技术事务，但没有人教、上手门槛高。所以 Anthropic 对 Claude Code 做了一层简单的 UI 封装，以 **Cowork** 这个产品形式提供给非技术用户——你在 Cowork 里做的事情，底层就是 Claude Code 在跑。
+
+如果你已经会用 Claude Code，Cowork 没有额外的能力，只是界面更友好。
+
+---
+
+### Claude Code 和 Claude Desktop 有什么区别？
+
+两者的定位不同，适合的任务类型也不同：
+
+| | Claude Desktop | Claude Code |
+|--|---------------|-------------|
+| **适合的任务** | 单次、简单、不需要协作 | 复杂、多步骤、需要协作或复用 |
+| **典型场景** | 问一个问题、做一次快速 research、生成一段文案 | 多工具协同任务、有固定执行流程的工作、团队共享的 AI 工作台 |
+| **记忆/复用** | 无，每次对话独立 | 通过 CLAUDE.md / Skill / Subagent 沉淀，长期复用 |
+
+简单判断：这件事只需要做一次，不需要留存任何配置 → Claude Desktop；这件事会重复做，或者需要团队协作 → Claude Code。
+
+---
+
+### Claude Code 和 Openclaw（小龙虾）有什么区别？
+
+关键区别在于**养成能力**：Openclaw 支持跨会话的记忆沉淀和检索，Claude Code 原生不支持——它的定位是事务执行者，只干活，少说话。"养成"是 Claude Desktop 这个产品才提供的能力（Claude Code 本身也有部分第三方插件支持）。
+
+除此之外，**Openclaw 能做的，Claude Code 只会做得更好**：上手门槛更低（一旦配置好）、使用成本更低、执行任务更灵活强大。
+
+**唯一明显的短板**：开箱即用的 deep research 能力。Claude Code 本身不内置这个功能，除非自己搭建一个 local agent 来实现。其他场景，Claude Code 都更有优势。
+
+> 注：目前 Claude 账号在中国大陆注册有门槛，这是使用 Claude Code 的实际障碍之一。
+
+---
+
 ## 基础使用
 
 ### Claude Code 和网页版 Claude 有什么区别？
